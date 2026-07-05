@@ -1,45 +1,43 @@
 import React from 'react';
 import './Location.css';
-import cafeImage from '../assets/boda658.jpg';
 import { HiOutlineMapPin } from 'react-icons/hi2';
 
 const Location = () => {
   return (
     <section className='location__container' id='location'>
       <div>
-        <h2 className='section__title'>Boda658</h2>
+        <h2 className='section__title'>플레이스 플로라</h2>
         <span className='section__subtitle'>
-          경기 광주시 초월읍 현산안길 34 (우)12728
+          7.18 (토) 오후 4:30
           <br />
-          (경기 광주시 초월읍 지월리 658-1)
+          대전 동구 회남로 57-54
         </span>
       </div>
 
-      {/* Map Image */}
+      {/* Venue Images — 좌: 홀(2/3), 우: 입구(1/3) */}
       <div className='location__wrapper'>
-        <img src={cafeImage} alt='카페이미지' className='location__img' />
+        <img
+          src='/images/venue_hall.png'
+          alt='플레이스 플로라 홀'
+          className='location__img location__img--main'
+        />
+        <img
+          src='/images/venue_sign.png'
+          alt='플레이스 플로라 입구'
+          className='location__img location__img--sub'
+        />
       </div>
 
       {/* Navigation Link */}
       <div className='location-button-group-wrapper'>
         <div className='button-group'>
           <a
-            href='https://naver.me/xtWvjTGI'
+            href='https://naver.me/G6Rd8aOI'
             target='_blank'
             rel='noreferrer'
             className='button button-primary button--flex'
           >
             네이버지도
-            <HiOutlineMapPin className='button--flex--icon' />
-          </a>
-
-          <a
-            href='https://place.map.kakao.com/254406486'
-            target='_blank'
-            rel='noreferrer'
-            className='button button-reverse button--flex'
-          >
-            카카오지도
             <HiOutlineMapPin className='button--flex--icon' />
           </a>
         </div>

@@ -1,28 +1,112 @@
 .about__container {
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 3rem 1rem;
 }
 
-.grid__wrapper {
-  grid-template-columns: repeat(2, max-content);
+/* 레이아웃: [사진 | 인생업적] / [스탯 3칸] */
+.about__layout {
+  display: grid;
+  grid-template-columns: 400px minmax(0, 1fr);
+  grid-template-areas:
+    'photo achievements'
+    'stats stats';
   gap: 0.75rem;
   margin: 2rem;
+  width: 100%;
+  max-width: 820px;
 }
 
 .about__img {
+  grid-area: photo;
   width: 400px;
   height: 400px;
   object-fit: cover;
   border-radius: 1rem;
-  justify-self: end;
+}
+
+/* 인생 업적 세로 카드 */
+.about__achievements {
+  grid-area: achievements;
+  height: 400px;
+  background-color: var(--container-color);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 1rem;
+  padding: 1.5rem 1.75rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.about__ach-title {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: var(--text-3xl);
+  font-weight: var(--font-medium);
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.about__ach-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  flex: 1;
+}
+
+.about__ach-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.about__ach-emoji {
+  font-size: 2rem;
+  width: 2.25rem;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.about__ach-label {
+  font-size: var(--text-2xl);
+  font-weight: var(--font-medium);
+  flex-shrink: 0;
+}
+
+.about__ach-value {
+  margin-left: auto;
+  text-align: right;
+  font-size: var(--text-xl);
+  font-weight: var(--font-medium);
+  color: var(--text-color-light, #888);
+}
+
+/* 습득 완 = 초록 (영유아 검진 '정상'과 동일 톤) */
+.about__ach-value--done {
+  color: #2e9e3f;
+}
+
+/* 훈련 중 · 임박 = 파랑 */
+.about__ach-value--progress {
+  color: #1f6feb;
+}
+
+/* 하단 스탯 3칸 */
+.about__stats {
+  grid-area: stats;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.75rem;
 }
 
 .about__box {
-  width: 200px;
-  height: 200px;
+  height: 190px;
   background-color: var(--container-color);
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 1rem;
@@ -32,8 +116,6 @@
   justify-content: center;
   align-items: center;
   text-align: center;
-  justify-self: end;
-  align-self: end;
   gap: 0.75rem;
 }
 
@@ -41,12 +123,12 @@
   background-color: var(--body-color);
 }
 
-.about__box:nth-child(4) {
+.about__box--check {
   border: 1px solid rgba(0, 0, 0, 1);
   background-color: rgba(102, 204, 51, 0.05);
 }
 
-.about__box:nth-child(4):hover {
+.about__box--check:hover {
   background-color: rgba(102, 204, 51, 0.09);
 }
 
@@ -71,45 +153,43 @@
 }
 
 /*=============== BREAKPOINTS ===============*/
-/* For medium devices */
+/* For medium devices — 세로 스택 */
 @media screen and (max-width: 768px) {
-  .grid__wrapper {
-    grid-template-columns: max-content;
-    gap: 0.75rem;
+  .about__layout {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      'photo'
+      'achievements'
+      'stats';
+    max-width: 400px;
+    justify-items: center;
+  }
+
+  .about__achievements {
+    width: 100%;
+    height: auto;
+  }
+
+  .about__ach-list {
+    gap: 0.5rem;
+  }
+
+  .about__stats {
+    width: 100%;
+    grid-template-columns: 1fr;
   }
 
   .about__box {
-    display: flex;
     flex-direction: row;
-    width: 100%;
-    height: 60px;
-    gap: 0.75rem;
+    justify-content: flex-start;
+    height: 70px;
   }
-
-  /* .about__icon {
-    font-size: 2.25rem;
-    color: var(--text-color);
-    margin-bottom: var(--mb-0-25);
-  }
-
-  .about__title {
-    font-size: var(--text-2xl);
-    font-weight: var(--font-medium);
-  }
-
-  .about__subtitle {
-    font-size: var(--text-base);
-  }
-
-  .about__description {
-    font-size: var(--text-base);
-    margin-bottom: var(--mb-2-5);
-  } */
 }
 
 @media screen and (max-width: 640px) {
   .about__img {
-    width: 320px;
-    height: 320px;
+    width: 100%;
+    max-width: 340px;
+    height: 340px;
   }
 }

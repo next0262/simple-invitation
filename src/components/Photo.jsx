@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './Photo.css';
 import LazyLoad from 'react-lazy-load';
 
-const PHOTO_COUNT = 6;
+const PHOTO_COUNT = 8;
 const DEGREE_RANGE = 10;
 
 const Photo = () => {

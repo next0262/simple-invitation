@@ -8,6 +8,8 @@ const Location = () => {
       <div>
         <h2 className='section__title'>플레이스 플로라</h2>
         <span className='section__subtitle'>
+          가을홀
+          <br />
           7.18 (토) 오후 4:30
           <br />
           대전 동구 회남로 57-54
@@ -17,8 +19,8 @@ const Location = () => {
       {/* Venue Images — 좌: 홀(2/3), 우: 입구(1/3) */}
       <div className='location__wrapper'>
         <img
-          src='/images/venue_hall.png'
-          alt='플레이스 플로라 홀'
+          src='/images/venue_hall.jpg'
+          alt='플레이스 플로라 가을홀'
           className='location__img location__img--main'
         />
         <img

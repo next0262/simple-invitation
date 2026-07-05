@@ -6,10 +6,8 @@ const Location = () => {
   return (
     <section className='location__container' id='location'>
       <div>
-        <h2 className='section__title'>플레이스 플로라</h2>
+        <h2 className='section__title'>플레이스 플로라 (가을홀)</h2>
         <span className='section__subtitle'>
-          가을홀
-          <br />
           7.18 (토) 오후 4:30
           <br />
           대전 동구 회남로 57-54

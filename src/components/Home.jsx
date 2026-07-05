@@ -64,7 +64,7 @@ const Home = () => {
             <motion.h2 variants={eachVariants} className='home__subtitle'>
               일시 : 7.18 (토) 오후 4:30
               <br />
-              장소 : <a href='#location'>플레이스 플로라</a>
+              장소 : <a href='#location'>플레이스 플로라 (가을홀)</a>
             </motion.h2>
 
             <motion.div variants={eachVariants} className='button-group'>

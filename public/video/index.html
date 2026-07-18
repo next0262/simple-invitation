@@ -3,9 +3,9 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-<title>유안이 첫 생일 · 돌잔치 영상</title>
-<meta property="og:title" content="유안이 첫 생일 · 돌잔치 영상" />
-<meta property="og:description" content="유안이 돌 축하해주셔서 감사합니다!" />
+<title>유안이 돌잔치</title>
+<meta property="og:title" content="유안이 돌잔치 · 2026.07.18" />
+<meta property="og:description" content="유안이의 첫 일 년, 영상으로 함께 나눠요." />
 <meta property="og:image" content="https://invitation.leedemas.com/dol-poster.jpg" />
 <meta property="og:type" content="video.other" />
 <style>
@@ -18,9 +18,11 @@
     display: flex; align-items: center; justify-content: center; padding: 24px;
   }
   .wrap { width: 100%; max-width: 1040px; text-align: center; }
-  .eyebrow { font-size: 13px; letter-spacing: 6px; color: #e7c07a; font-weight: 700; margin-bottom: 12px; }
-  h1 { font-size: clamp(26px, 5vw, 40px); font-weight: 800; letter-spacing: -0.5px; margin-bottom: 8px; }
-  .date { font-size: clamp(14px, 3vw, 17px); color: #9aa2b5; letter-spacing: 2px; margin-bottom: 26px; }
+  .eyebrow { font-size: 13px; letter-spacing: 3px; color: #9aa2b5; font-weight: 600; margin-bottom: 14px; }
+  h1 { font-size: clamp(28px, 5.5vw, 46px); font-weight: 800; letter-spacing: -0.5px; margin-bottom: 10px; }
+  .date { display: inline-flex; align-items: center; gap: 8px; font-size: clamp(13px, 3vw, 15px);
+    color: #e7c07a; letter-spacing: 1px; margin-bottom: 28px; padding: 6px 14px;
+    border: 1px solid rgba(231,192,122,0.35); border-radius: 999px; }
   .player { position: relative; width: 100%; aspect-ratio: 1920 / 800; background: #000;
     border-radius: 14px; overflow: hidden; box-shadow: 0 12px 60px rgba(0,0,0,0.55); border: 1px solid #23242b; }
   .player video, .player img { width: 100%; height: 100%; object-fit: contain; background: #000; display: block; }
@@ -33,24 +35,29 @@
   .play svg { width: 34px; height: 34px; margin-left: 4px; }
   .dur { position: absolute; right: 14px; bottom: 12px; background: rgba(0,0,0,0.62); color: #fff;
     font-size: 12px; font-weight: 600; padding: 4px 9px; border-radius: 7px; }
-  .foot { margin-top: 22px; font-size: 12.5px; color: #6a7080; letter-spacing: 3px; }
+  .foot { margin-top: 24px; font-size: clamp(13px, 3vw, 15px); color: #aeb4c2; line-height: 1.7; }
+  .foot .sig { display: block; margin-top: 8px; font-size: 12.5px; color: #6a7080; letter-spacing: 2px; }
 </style>
 </head>
 <body>
   <div class="wrap">
-    <div class="eyebrow">YOOAHN · 1ST BIRTHDAY</div>
-    <h1>유안이 첫 생일</h1>
-    <div class="date">2026년 7월 18일</div>
+    <div class="eyebrow">우리 유안이가 벌써 한 살이 되었어요</div>
+    <h1>유안이 돌잔치</h1>
+    <div class="date">🎂 2026년 7월 18일</div>
     <div class="player" id="player">
-      <button class="poster-btn" id="posterBtn" aria-label="돌잔치 영상 재생">
-        <img src="/dol-poster.jpg" alt="유안이 돌잔치 영상" />
+      <button class="poster-btn" id="posterBtn" aria-label="성장 영상 재생">
+        <img src="/dol-poster.jpg" alt="유안이 성장 영상" />
         <span class="play"><span class="circle">
           <svg viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg>
         </span></span>
         <span class="dur">7:09</span>
       </button>
     </div>
-    <div class="foot">유안이 돌 축하해주셔서 감사합니다!</div>
+    <div class="foot">
+      지난 일 년, 유안이의 자라온 순간들을 영상에 담았어요.<br>
+      함께 봐 주시고 축복해 주셔서 감사합니다.
+      <span class="sig">— 유안이네 —</span>
+    </div>
   </div>
   <script>
     document.getElementById('posterBtn').addEventListener('click', function () {

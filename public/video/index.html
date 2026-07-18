@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>유안이 첫 생일 · 돌잔치 영상</title>
+<meta property="og:title" content="유안이 첫 생일 · 돌잔치 영상" />
+<meta property="og:description" content="유안이 돌 축하해주셔서 감사합니다!" />
+<meta property="og:image" content="https://invitation.leedemas.com/dol-poster.jpg" />
+<meta property="og:type" content="video.other" />
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { height: 100%; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Segoe UI", Roboto, sans-serif;
+    background: radial-gradient(ellipse at top, #1a1c22 0%, #0c0d10 60%, #08090b 100%);
+    color: #f4f5f7; min-height: 100%;
+    display: flex; align-items: center; justify-content: center; padding: 24px;
+  }
+  .wrap { width: 100%; max-width: 1040px; text-align: center; }
+  .eyebrow { font-size: 13px; letter-spacing: 6px; color: #e7c07a; font-weight: 700; margin-bottom: 12px; }
+  h1 { font-size: clamp(26px, 5vw, 40px); font-weight: 800; letter-spacing: -0.5px; margin-bottom: 8px; }
+  .date { font-size: clamp(14px, 3vw, 17px); color: #9aa2b5; letter-spacing: 2px; margin-bottom: 26px; }
+  .player { position: relative; width: 100%; aspect-ratio: 1920 / 800; background: #000;
+    border-radius: 14px; overflow: hidden; box-shadow: 0 12px 60px rgba(0,0,0,0.55); border: 1px solid #23242b; }
+  .player video, .player img { width: 100%; height: 100%; object-fit: contain; background: #000; display: block; }
+  .poster-btn { position: absolute; inset: 0; border: none; padding: 0; background: none; cursor: pointer; }
+  .poster-btn img { object-fit: cover; }
+  .play { position: absolute; inset: 0; display: grid; place-items: center; }
+  .play .circle { width: 84px; height: 84px; border-radius: 50%; background: rgba(0,0,0,0.5);
+    backdrop-filter: blur(3px); display: grid; place-items: center; transition: transform .15s, background .15s; }
+  .poster-btn:hover .circle { transform: scale(1.06); background: rgba(0,0,0,0.65); }
+  .play svg { width: 34px; height: 34px; margin-left: 4px; }
+  .dur { position: absolute; right: 14px; bottom: 12px; background: rgba(0,0,0,0.62); color: #fff;
+    font-size: 12px; font-weight: 600; padding: 4px 9px; border-radius: 7px; }
+  .foot { margin-top: 22px; font-size: 12.5px; color: #6a7080; letter-spacing: 3px; }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="eyebrow">YOOAHN · 1ST BIRTHDAY</div>
+    <h1>유안이 첫 생일</h1>
+    <div class="date">2026년 7월 18일</div>
+    <div class="player" id="player">
+      <button class="poster-btn" id="posterBtn" aria-label="돌잔치 영상 재생">
+        <img src="/dol-poster.jpg" alt="유안이 돌잔치 영상" />
+        <span class="play"><span class="circle">
+          <svg viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg>
+        </span></span>
+        <span class="dur">7:09</span>
+      </button>
+    </div>
+    <div class="foot">유안이 돌 축하해주셔서 감사합니다!</div>
+  </div>
+  <script>
+    document.getElementById('posterBtn').addEventListener('click', function () {
+      var p = document.getElementById('player');
+      p.innerHTML = '<video src="/dol" controls autoplay playsinline poster="/dol-poster.jpg"></video>';
+    });
+  </script>
+</body>
+</html>
